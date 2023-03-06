@@ -2,4 +2,4 @@
 Code used to analyze WGS data from Bearded seals. 
 
 ### SNP calling (genotype likelihoods)
-```angsd.gl.sh```
+```angsd.gl.sh:``` Calls genotype likelihoods.
