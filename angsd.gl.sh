@@ -11,12 +11,10 @@
 ############################################
 
 bamlist=/projects/mjolnir1/people/nrb613/X204SC22021885-Z01-F004/combined.nuclear/redo/E.b.bam.list.doc.1.final.txt
-out=/projects/mjolnir1/people/nrb613/X204SC22021885-Z01-F004/combined.nuclear/redo/EB.genotype.likelihoods.doc.1.autosomes/EB.genotype.likelihoods.doc.1.ma
-p30.autosomes.final
+out=/projects/mjolnir1/people/nrb613/X204SC22021885-Z01-F004/combined.nuclear/redo/EB.genotype.likelihoods.doc.1.autosomes/EB.genotype.likelihoods.doc.1.map30.autosomes.final.54
 chr=/projects/mjolnir1/people/nrb613/X204SC22021885-Z01-F004/reference.genome/Erignathus_barbatus_HiC_autosomes.txt
 
 module load angsd
 #54 represents 75% of all individuals with a depth of coverage greater than 1x (total 72).
 inds=54
-angsd -GL 1 -rf ${chr} -out ${out}.${inds} -doMaf 1 -SNP_pval 1e-6 -nThreads 20 -minMaf 0.05 -doGlf 2 -doMajorMinor 1 -minInd ${inds} -bam ${bamlist} -uni
-queOnly 1 -remove_bads 1 -only_proper_pairs 1 -skipTriallelic 1 -minMapQ 30 -minQ 30
+angsd -GL 1 -rf ${chr} -out ${out}.${inds} -doMaf 1 -SNP_pval 1e-6 -nThreads 20 -minMaf 0.05 -doGlf 2 -doMajorMinor 1 -minInd ${inds} -bam ${bamlist} -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -skipTriallelic 1 -minMapQ 30 -minQ 30
