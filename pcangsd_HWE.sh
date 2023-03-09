@@ -17,5 +17,8 @@ beagle_file=EB.genotype.likelihoods.doc.1.map30.autosomes.final.54.beagle.gz
 output=EB.genotype.likelihoods.doc.1.map30.autosomes.final.54
 e=3
 
-#3805163 sites before removing
+#Get input sites for pcangsd filteriing
 pcangsd -beagle $beagle_file -inbreedSites -e $e -o ${output}.hwe_postQC_loci_e$e -sites_save
+
+#Run pcangsd with the sites identified in the previous step
+pcangsd -beagle $beagle_file -e $e -hwe ${output}.hwe_postQC_loci_e$e.lrt.sites.npy -hwe_tole 1e-6 -o ${output}.hwe_postQC_loci_e$e.HWE.postQC.loci.results
