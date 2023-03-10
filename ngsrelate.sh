@@ -31,4 +31,4 @@ cat E.b.bam.list.doc.1.final.txt | cut -f1 -d "_" > global.ids.txt
 
 zcat ${freqs} | cut -f5 | sed 1d > freq.${inds}
 
-${ngsrelate} -g ${input} -n ${num_inds} -f freq.${inds} -z global.ids.txt -p 20 -O ngsrelate.out
+${ngsrelate} -g ${input} -n ${num_inds} -f freq.${inds} -z global.ids.txt -p 20 -O EB.genotype.likelihoods.doc.1.autosomes/ngsrelate.out
