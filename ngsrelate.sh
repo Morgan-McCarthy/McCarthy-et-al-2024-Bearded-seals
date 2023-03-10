@@ -23,11 +23,12 @@ angsd -GL 1 -rf ${chr} -out ${out}.${inds} -doMaf 1 -SNP_pval 1e-6 -nThreads 20 
 #Run ngsrelate
 
 ngsrelate=/projects/mjolnir1/people/nrb613/X204SC22021885-Z01-F004/combined.nuclear/redo/E.b.nauticus.genotype.likelihoods.doc.1.autosomes/ngsRelate/./ngsRelate
-input=EB.genotype.likelihoods.doc.1.map30.autosomes.final.ngsrelate.54.glf.gz
+input=/projects/mjolnir1/people/nrb613/X204SC22021885-Z01-F004/combined.nuclear/redo/EB.genotype.likelihoods.doc.1.autosomes/EB.genotype.likelihoods.doc.1.map30.autosomes.final.ngsrelate/EB.genotype.likelihoods.doc.1.map30.autosomes.final.ngsrelate.54.glf.gz
+freqs=/projects/mjolnir1/people/nrb613/X204SC22021885-Z01-F004/combined.nuclear/redo/EB.genotype.likelihoods.doc.1.autosomes/EB.genotype.likelihoods.doc.1.map30.autosomes.final.ngsrelate/EB.genotype.likelihoods.doc.1.map30.autosomes.final.ngsrelate.54.mafs.gz
 num_inds=72
 
-#cat E.b.bam.list.doc.1.final.txt | cut -f1 -d "_" > global.ids.txt
+cat E.b.bam.list.doc.1.final.txt | cut -f1 -d "_" > global.ids.txt
 
-zcat ${input} | cut -f5 | sed 1d > freq.${inds}
+zcat ${freqs} | cut -f5 | sed 1d > freq.${inds}
 
 ${ngsrelate} -g ${input} -n ${num_inds} -f freq.${inds} -z global.ids.txt -p 20 -O ngsrelate.out
