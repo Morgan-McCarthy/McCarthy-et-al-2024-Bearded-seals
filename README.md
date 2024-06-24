@@ -1,4 +1,4 @@
-# McCarthy-et-al-2023-Bearded-seals
+# McCarthy-et-al-2024-Bearded-seal-genomics
 Code used to analyze WGS data from Bearded seals. 
 
 ### SNP calling (genotype likelihoods)
